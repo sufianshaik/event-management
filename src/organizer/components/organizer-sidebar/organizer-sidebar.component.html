@@ -1,0 +1,27 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div class = "sidenav">
+            <div>
+                <ul class = "sidenav-nav" style="list-style: none;"> 
+                    <li class = "sidenav-nav-item my-4">
+                        <button mat-button routerLinkActive="active" routerLink = "/organizer/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</button>
+                    </li>
+                    <li class = "sidenav-nav-item my-4">
+                        <button mat-button routerLinkActive="active" routerLink = "/organizer/events"><mat-icon>event</mat-icon>Events</button>
+                    </li>
+                    <li class = "sidenav-nav-item my-4">
+                        <button mat-button routerLinkActive="active" routerLink = "/organizer/messages"><mat-icon>message</mat-icon>Messages</button>
+                    </li>
+                    <li class = "sidenav-nav-item my-4">
+                        <button mat-button routerLinkActive="active"  routerLink = "/organizer/profile"><mat-icon>account_circle</mat-icon>Profile</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+  </mat-drawer-container>

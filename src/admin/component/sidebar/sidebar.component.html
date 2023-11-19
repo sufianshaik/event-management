@@ -1,0 +1,33 @@
+
+
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div class = "sidenav">
+            <h3 class = "text-center my-4">Event Hive</h3>
+            <div>
+                <ul class = "sidenav-nav" style="list-style: none;"> 
+                    <li class = "sidenav-nav-item my-3">
+                        <button mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+                    </li>
+                    <li class = "sidenav-nav-item my-3">
+                        <button mat-button><mat-icon>event</mat-icon>Events</button>
+                    </li>
+                    <li class = "sidenav-nav-item my-3">
+                        <button mat-button><mat-icon>message</mat-icon>Messages</button>
+                    </li>
+                    <li class = "sidenav-nav-item my-3">
+                        <button mat-button><mat-icon>account_circle</mat-icon>Profile</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div>
+            <mat-toolbar>
+                <!-- <span>My Application</span> -->
+            </mat-toolbar>
+        </div>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>

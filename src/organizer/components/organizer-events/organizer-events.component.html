@@ -1,0 +1,21 @@
+<div class = "container-fluid">
+    <div *ngIf = "categoriesList && categoriesList.length == 0" class = "w-50 mx-auto">
+        <img height="350" src = "../../../assets/images/noEventsPresentUndrawSvg.svg" alt = "noEventsImage">
+         <a class = "anchor" routerLink="/" style="cursor: alias; text-decoration: none;" ><h2 class = "display-2 mt-5">No events Click here to Add</h2></a>
+    </div>
+    <div *ngIf = "categoriesList && categoriesList.length != 0" >
+        <h2><span>Events</span> Created By You {{_userLoginService.userDetails.firstName}}</h2>
+        <div class = "cat-events" *ngFor="let cat of groupedEvents | keyvalue">
+            
+            <h3 style="color: blueviolet; font-size: large; font-weight: 700;" class= "">{{cat.key | titlecase}}</h3>
+            <div class = "containers">
+                <owl-carousel-o [options] = "customOptions">
+                    <ng-template carouselSlide *ngFor = "let item of cat.value">
+                            <app-event-details-card-org  [eventDetails]="item"></app-event-details-card-org>
+                    </ng-template>
+                </owl-carousel-o>  
+            </div>
+        </div>
+    </div>      
+</div>
+

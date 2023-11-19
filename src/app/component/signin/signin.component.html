@@ -1,0 +1,77 @@
+<div class = "container card mt-3">
+    <div class = "row">
+        <div class = "container-fluid col-lg-6">
+            <div class = "d-flex flex-column align-items-center mt-4">
+                <h3 class = "">Event Hive</h3>
+                <h2 class = "">Sign In to Event Hive</h2>
+            </div>
+            <div class = "w-75 my-4 mx-auto">
+                <form [formGroup]  = "signinForm" (ngSubmit)="save()">          
+                    <div class="mb-3">
+                        <div style="line-height: .4;">
+                            <label for="exampleInputEmail1" class="form-label" style="font-size: smaller;">YOUR EMAIL</label>
+                            <input 
+                            type="email" 
+                            formControlName = "email" 
+                            class="form-control" 
+                            id="exampleInputEmail1" 
+                            aria-describedby="emailHelp"
+                            [ngClass]="{'is-invalid': stringsToDisplay.emailMessages}"/>
+                            <span class="invalid-feedback my-2" *ngIf = "stringsToDisplay.emailMessages && stringsToDisplay.emailMessages.length > 0">
+                                {{stringsToDisplay.emailMessages}}
+                            </span>
+                        </div>
+                        <div *ngIf = "stringsToDisplay.emailMessages.length == 0" id="emailHelp" class="form-text" style="font-size: xx-small;">We'll never share your email with anyone else.</div>
+                    </div>     
+                    <div class="my-4">
+                        <div class = "d-flex justify-content-between" style="line-height: .5;">
+                            <label for="exampleInputEmail1" class="form-label"  style="font-size: smaller;">PASSWORD</label>
+                            <span style="font-size: x-small;">forgot your password?</span>
+                        </div>
+                       <div>
+                            <input 
+                            class = "icon-password form-control" 
+                            formControlName = "password" 
+                            [type]="hide ? 'password' : 'text'"
+                            [ngClass]="{'is-invalid': stringsToDisplay.passwordMessages } "/>
+                            <span class = "invalid-feedback my-1" style="line-height: 1;">
+                                {{stringsToDisplay.passwordMessages}}
+                            </span>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            <!-- <button class = "icon" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button> -->
+                        </div>
+                    </div>  
+                    <!-- <div>
+                        <mat-label 
+                        class = "d-block">
+                        Select the Role</mat-label>
+                        <mat-radio-group 
+                        aria-label="Select an option"
+                        formControlName = "typeOfRole"
+                        [ngClass]="{'is-invalid': stringsToDisplay.roleMessages }">
+                            <mat-radio-button value="admin">Admin</mat-radio-button>
+                            <mat-radio-button value="organizer">Organizer</mat-radio-button>
+                            <mat-radio-button value="user">User</mat-radio-button>
+                        </mat-radio-group>
+                        <span class = "invalid-feedback my-1" style="line-height: 1;">
+                            {{stringsToDisplay.roleMessages}}
+                        </span>
+                    </div> -->
+                    <div class = "text-center mt-3">
+                        <button class = "w-50" mat-raised-button [disabled]="signinForm.invalid" color = "warn">Sign In</button>
+                    </div>   
+                </form>
+            </div>
+        </div>
+        <div class = "col-lg-6 g-0">
+            <div class ="on-image text-white d-flex flex-column align-items-center">
+                <h2>Hello Friend</h2>
+                <span>To keep connected with us please provide your information</span>
+                <button class = "w-25 bg-outline-secondary my-3" mat-raised-button routerLink = "/signup">sign up</button>
+            </div>
+            <img  class = "img-fluid w-100" style="max-height: 80vh;" src= "../../../assets/images/signin.avif" alt = "signup image">
+        </div>
+    </div>
+</div>

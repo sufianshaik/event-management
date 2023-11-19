@@ -1,0 +1,56 @@
+.card {
+    border-radius: 1rem;
+    border: 0.5vmin solid #05060f;
+    box-shadow: 0.4rem 0.4rem #05060f;
+    overflow: hidden;
+    color: black;
+}
+
+.on-image{
+    position: absolute;
+    right : 60%;
+    top : 40% ;
+}
+
+@media screen and (max-width  : 1024px){
+    .on-image{
+        right : 50%;
+        top : 40% 
+    }
+}
+@media only screen and (max-width  : 1024px){
+    .on-image{
+        right : 60%;
+        top : 40%;
+    }
+}
+
+@media only screen and (max-width : 990px) and (min-width :768px){
+    .on-image{
+        right : 25%;
+        top : 20%;
+    }
+}
+
+@media only screen and (max-width : 767px) and (min-width :534px){
+    .on-image{
+        right : 18%;
+        top : 20%;
+    }
+}
+
+@media only screen and (max-width : 533px) and (min-width :396px){
+    .on-image{
+        right : 18%;
+        top : 20%;
+    }
+}
+
+@media only screen and (max-width : 595px) and (min-width :138px){
+    .on-image{
+        right : 10%;
+        left : 10%;
+        top : 20%;
+        bottom : 10%;
+    }
+}

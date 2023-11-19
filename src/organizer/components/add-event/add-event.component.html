@@ -1,0 +1,130 @@
+<div class = "container mt-2 w-50 card">
+    <div class = "header text-center">
+        <h2>Create Event</h2>
+    </div>
+    <form [formGroup] = "newEvent" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="eventNameId" class="form-label">Event Title</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="eventNameId" 
+                formControlName="eventName" 
+                placeholder="Enter your title..."
+                [ngClass]="{ 'is-invalid' : stringsToDisplay.eventTitle}" />
+            <span class = "invalid-feedback">
+                {{stringsToDisplay.eventTitle}}    
+            </span>
+        </div>
+
+        <div class="mb-3">
+            <label for="eventVenueId" class="form-label">Event Venue</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="eventVenueId" 
+                formControlName = "eventVenue" 
+                placeholder="Enter event Venue..." />
+        </div>
+
+    
+        <div class = "mb-4 row d-flex"> 
+            <div class = "col-lg-6">    
+                <label for="categoryId" class="form-label">Category</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="categoryId" 
+                formControlName = "category" 
+                placeholder="Enter event category...">
+            </div>
+            <div class = "col-lg-6">
+                <label for="capacityId" class="form-label">Event Capacity</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="capacityId" 
+                    formControlName = "capacity" 
+                    placeholder="Enter maximum capacity of event..." />
+            </div>
+        </div>
+
+
+        <div class = "mb-4 row d-flex"> 
+            <div class = "col-lg-6">    
+                <label for="locationId" class="form-label">Location</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="locationId" 
+                    formControlName = "location" 
+                    placeholder="Enter the location..." />
+            </div>
+            <div class = "col-lg-6">
+                <label for="eventFareAmountId" class="form-label">Amount</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="eventFareAmountId" 
+                    formControlName = "eventFareAmount" 
+                    placeholder="Enter event fare in rupees..." />
+            </div>
+        </div>
+
+<!-- 
+        <div class="mb-4 row d-flex" formGroupName = "timeGroup">
+            <div class = "col-lg-6">
+                <label for="startTime" class="form-label">Start Time</label>
+                <input formControlName = "startTime" type="time" class="form-control" id="startTime" placeholder="Enter start Time">
+            </div>
+            <div class = "col-lg-6">
+                <label for="endTime" class="form-label">End Time</label>
+                <input formControlName = "endTime" type="time" class="form-control" id="endTime" placeholder="Enter end time...">
+            </div>
+        </div> -->
+
+        <div class="mb-4 row d-flex">
+            <div class = "col-lg-6">
+                <label for="startTimeAndDateId" class="form-label">Start Date</label>
+                <input 
+                    type="date"
+                    close-text="Close" 
+                    class="form-control" 
+                    formControlName = "startTimeAndDate" 
+                    id="startTimeAndDateId" 
+                    placeholder="Enter start date" 
+                    [ngClass]="{'is-invalid': stringsToDisplay.startDateMessage}"/>
+            </div>
+            <div class = "col-lg-6">
+                <label for="endTimeAndDateId" class="form-label">End Date</label>
+                <input 
+                    type="date" 
+                    class="form-control" 
+                    formControlName = "endTimeAndDate" 
+                    id="endTimeAndDateId" 
+                    placeholder="Enter end date..." />
+            </div>
+        </div>
+
+
+        <div class = "mb-4 row">
+            <label class="form-label" for="descriptionId">Event Description</label>
+            <div class="form-outline">
+                <textarea 
+                    formControlName = "description" 
+                    class="form-control" 
+                    id="descriptionId" 
+                    placeholder="Enter the Event Description..." 
+                    rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class = "mb-4 text-center">
+            <button class = "btn w-75" type="submit" mat-raised-button color = "primary">Create Event</button>
+        </div>
+
+        
+
+
+    </form>
+</div>

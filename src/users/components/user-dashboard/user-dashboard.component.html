@@ -1,0 +1,56 @@
+<div class ="container-fluid">
+    <div class = "top-section">
+
+    </div>
+    <div class = "container my-3">
+        <div class = "d-flex justify-content-between align-items-center">
+            <h1><span style="color: blueviolet;font-weight: 500;">Events</span> Around You</h1>
+
+
+            <div [formGroup] = "searchBarForm"> 
+                <div class = "d-flex justify-content-center">
+                    <div clas = "weekdays">
+                        <select formControlName = "eventType" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected value = "">Event type</option>
+                            <option value="0">Free</option>
+                            <option value="1">Paid</option>
+                        </select>
+    
+                    </div>
+                    <div class = "eventtype mx-4">
+                        <select formControlName = "cityType" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected value = "">City</option>
+                            <option *ngFor = "let city of locationList" value = {{city}}>{{city | titlecase}}</option>
+                        </select>
+                    </div>
+                    <div class = "category d-flex flex-column">
+                        <select formControlName = "categoryType" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected value = "">Any Category</option>
+                            <option *ngFor = "let cat of categoriesList" value = {{cat}}>{{cat | titlecase}}</option>
+                        </select>
+                    </div>
+                 </div>
+            </div>
+        </div>  
+    </div>
+    <div class = "container" *ngIf = "filteredGroupedEvents && filteredGroupedEvents.length > 0">
+        <div class = "cat-events mt-3" *ngFor="let cat of groupedEvents | keyvalue">
+            <div class = "d-flex justify-content-between"> 
+                <h2 style="color: #EF767A; font-size: x-large;">{{cat.key | titlecase}}</h2>
+                 <a href="" [routerLink]="['category',cat.key]"><h3>view more</h3></a>
+            </div>
+            <div class = "containers">
+                <owl-carousel-o [options] = "customOptions">
+                    <ng-template carouselSlide class = "d-flex justify-content-center" *ngFor = "let item of cat.value">
+                        <app-user-event-details-card [eventDetails]="item"></app-user-event-details-card>
+                    </ng-template>
+                </owl-carousel-o>  
+            </div>
+        </div>
+    </div>    
+    <div *ngIf = "filteredGroupedEvents && filteredGroupedEvents.length == 0" class = "d-flex justify-content-center align-items-center mt-5">
+        <img src= "../../../assets/images/oopeNoEventsForNow.png" alt = "oops no events available">
+    </div>
+</div>
+
+

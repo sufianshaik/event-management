@@ -1,0 +1,9 @@
+.display-2 {
+    color :blueviolet !important;
+    font-size: x-large;
+}
+
+.anchor:hover{
+    transform: rotateX('10');
+}
+

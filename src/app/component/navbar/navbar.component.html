@@ -1,0 +1,30 @@
+<mat-toolbar class = "mx-auto d-flex flex-row justify-content-between" [ngClass] = "_userLoginService.isLogin ? 'container-fluid' :'container' ">
+    <div class = "d-flex align-items-center">
+        <a style="text-decoration: none;color: blueviolet; cursor: grabbing;" routerLink="/welcome"><span>Event Hive</span></a>
+    </div>
+    <div class = "d-flex flex-row justify-content-between">
+        <button class = "mx-2" *ngIf ="!_userLoginService.isLogin" mat-button routerLink="welcome" routerLinkActive="active">
+            Home
+        </button>
+        <button class = "mx-2" *ngIf = "_userLoginService.isLogin && (  _userLoginService.userDetails.typeOfUser === 'user'|| _userLoginService.Role === 'user')" routerLink="user/dashboard" mat-button routerLinkActive="active">
+            Home
+        </button>
+        <button *ngIf = "_userLoginService.isLogin && ( _userLoginService.userDetails.typeOfUser === 'user' || _userLoginService.Role == 'user')" mat-button routerLink = "user/myevents" routerLinkActive = "active">
+            My events
+        </button>
+    </div>
+    <div class = "d-flex align-items-center" >
+        <button style="font-weight: 700 !important;"  class = "mx-2" *ngIf = "!_userLoginService.isLogin" mat-button routerLink="/signin" routerLinkActive="active">
+            Login
+        </button>
+        <button  style="font-weight: 700 !important;"  routerLinkActive="active" *ngIf = "_userLoginService.isLogin && (_userLoginService.Role == 'organizer' || _userLoginService.userDetails.typeOfUser == 'organizer')" routerLink="/organizer/add-event" mat-button class = "my-2">
+            Add Event
+        </button>
+        <button style="font-weight: 700 !important;"  class = "mx-2" *ngIf = "_userLoginService.isLogin" mat-button routerLink = "/signup" routerLinkActive = "active" (click)= "logout()">
+            Logout 
+        </button>
+        <button style="font-weight: 700 !important;" class = "mx-2" *ngIf = "!_userLoginService.isLogin" mat-button routerLink="/signup" routerLinkActive="active">
+            Signup
+        </button>
+    </div>
+</mat-toolbar>

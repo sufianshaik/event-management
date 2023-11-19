@@ -1,0 +1,57 @@
+<div class = "row container">
+    <h3 style="font-size:x-large;font-weight: bold;" class = "text-center">Your Events Feedback</h3>
+    <div class = "row">
+     
+        <!-- <div class = "col-lg-3 col-md-3">
+            <ul> 
+                <li *ngFor = "let cat of groupedEvents | keyvalue" [routerLink]="['/organizer/messages/event-name',cat.key]">{{cat.key}}</li>
+            </ul>
+        </div> -->
+        
+       
+       
+    
+         <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Categories</th>
+                <th scope="col">Events</th>
+                <th scope="col">Users</th>
+                <th scope="col">Feedback</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cat of groupedEvents | keyvalue"> 
+                    <td class = "internal">{{cat.key}}</td>
+                    <td class = "second">
+                        <tr class = "" *ngFor = "let item of cat.value">
+                            <td class = "">
+                                {{item.eventName}}
+                            </td>
+                        </tr>
+                    </td>   
+                    <td>
+                        <tr *ngFor = "let item of cat.value"> 
+                            <td>
+                                <tr *ngFor = "let users of item.feedBackMessagesList">
+                                    {{users.email.length == 0 ? ("-") : (users.email)}}
+                                </tr>
+                            </td>
+                        </tr>
+                    </td>
+                    <td>
+                        <tr *ngFor = "let item of cat.value"> 
+                            <td>
+                                <tr *ngFor = "let users of item.feedBackMessagesList">
+                                    {{(users.feedBackMessage.length == 0) ? ("---") : (users.feedBackMessage)}}
+                                </tr>
+                            </td>
+                        </tr>
+                    </td>
+                </tr>
+            </tbody>
+        </table>  
+
+    
+    </div>
+</div>

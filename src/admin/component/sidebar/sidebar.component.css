@@ -1,0 +1,8 @@
+.sidenav{
+    width : 200px;
+    height: 100vh;
+    overflow-y: hidden;
+}
+mat-drawer-container {
+    min-height: 100vh;
+}

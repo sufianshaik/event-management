@@ -1,0 +1,11 @@
+
+.top-section {
+    background-image: url('../../../assets/images/organizer-single-page-event.jpg'); 
+    min-height: 500px;
+    padding : 14px;
+    color: aliceblue;
+    background-size: cover;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}

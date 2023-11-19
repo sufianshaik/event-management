@@ -1,1 +1,77 @@
+@import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css';
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+    display: none;
+}
+
+::placeholder{
+    font-size: smaller;
+}
+
+input[type = "text"]{
+    font-size: smaller;
+}
+
+input[type = "email"]{
+    font-size: smaller;
+}
+
+input[type = "number"]{
+    font-size: smaller;
+}
+
+input[type = "date"]{
+    font-size: small;
+}
+input[type = "password"]{
+    font-size: small;
+}
+
+.cat-events .owl-next, .cat-events .owl-prev {
+    background: rgb(158 158 158/ 28%) !important;
+    color : #222 !important; 
+    height : 50px !important; 
+    width : 50px  !important;
+    border-radius: 50% !important ; 
+    position: absolute;
+    top : 50% ;
+    transition: .3s ease all ;
+}
+.cat-events .owl-next{
+    right : -68px;
+    transform: translate(-50% ,-50%);
+}
+.cat-events .owl-prev {
+    left : -8px ;
+    transform: translate(-50% ,-50%);
+}
+
+.cat-events .owl-next i, .cat-events .owl-prev i {
+    font-size: 24px ;
+    position: absolute;
+    top : 50% ;
+    left : 50% ;
+    transform: translate(-50% ,-50%);
+} 
+
+.cat-events .owl-next:hover, .cat-events .owl-prev:hover {
+    background-color: blueviolet !important;
+    color : #fff !important;
+
+} 
+
+::-webkit-scrollbar {
+    /* width: 0; 
+    background: transparent;  */
+    width: 6px !important;
+    border-radius: 10px !important;  
+    background-color: whitesmoke !important ;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+    background-color: blueviolet;
+ }

@@ -1,0 +1,81 @@
+button {
+    background-color: blueviolet !important; 
+    color: aliceblue !important;
+}
+
+
+.top-section {
+    background-image: url('../../../assets/images/event-header.jpg'); 
+    min-height: 500px;
+    padding : 14px;
+    color: aliceblue;
+    background-size: cover;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.Btn {
+    width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+    background-size: 250%;
+    background-position: left;
+    color: #ffd277;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+  }
+  
+  .Btn::before {
+    position: absolute;
+    content: "EVENT COMPLETED";
+    color: #ffd277;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 90%;
+    border-radius: 8px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    background-size: 200%;
+  }
+  
+  .Btn:hover {
+    background-position: right;
+    transition-duration: 1s;
+  }
+  
+  .Btn:hover::before {
+    background-position: right;
+    transition-duration: 1s;
+  }
+  
+  .Btn:active {
+    transform: scale(0.95);
+  }
+
+/* @media only screen and (max-width : 766px) and (min-width: 620px){
+    .top-section button{
+        left :18% 
+    }
+}
+
+@media only screen and (max-width : 993px) and (min-width : 980px) {
+    .top-section button{
+        left :18% 
+    }
+}
+
+@media only screen and (max-width :979px ) and (min-width : 827px ) {
+    .top-section button{
+        left :18% 
+    }
+} */

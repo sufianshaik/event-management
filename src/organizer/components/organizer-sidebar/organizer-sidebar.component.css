@@ -1,0 +1,13 @@
+.sidenav{
+    width : 200px;
+    overflow-y: hidden;
+    height : 80vh;
+}
+mat-drawer-container {
+    min-height: 100vh;
+}
+
+.active{
+    background-color: blueviolet;
+    color: white ;
+}
